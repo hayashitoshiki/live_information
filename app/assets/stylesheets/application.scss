@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+  margin: 0;
+}
+header {
+  background-color: #a8a8a8;
+  margin: 0;
+}
+h1{
+  margin: 0;
+}
+
+.yoko {
+  width: 100%;
+  display: flex;
+  background-color:#000000;
+}
+
+dt li {
+  width: 33%;
+  float: left;
+  list-style: none;
+  font-size: 25px;
+}
+
+.home{
+  float: right;
+}
+
+li{
+
+   list-style: none;
+}
+//-----------------Dizzy sunfist-------------//
+.dai{
+  font-size: 30px;
+}
+
+.border{
+width: 300px;
+border:#d0d0d0  ridge 5px;
+
+}
+
+.left{
+  float: left;
+  margin: 10px;
+}
+
+.dizzy-twitter{
+  width: 1550px;
+}

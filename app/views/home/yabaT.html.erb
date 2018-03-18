@@ -1,0 +1,23 @@
+<h1>ヤバイTシャツ屋さん</h1>
+<div class="left">
+    <%= image_tag ('yabaT_image.jpg'), :size =>'310x310' %>
+  <div class="border">
+    <p>曲一覧</p>
+    <% @musics.each do |post| %>
+      <li><%= link_to(post.title,"/yabaT/#{post.id}") %></li>
+    <% end %>
+    <br>
+    <a href="yabaT/add">追加</a>
+  </div>
+  <a href="http://yabaitshirtsyasan.com/">ヤバイTシャツ屋さんsite</a>
+</div>
+<span class="twiite">
+  <a class="twitter-timeline" data-width="400" data-height="600" href="https://twitter.com/yabaT_koyacial?ref_src=twsrc%5Etfw">Tweets by yabaT_koyacial</a>
+  <script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a class="twitter-timeline" data-width="400" data-height="600" href="https://twitter.com/shibata_aribobo?ref_src=twsrc%5Etfw">Tweets by shibata_aribobo</a>
+  <script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a class="twitter-timeline" data-width="400" data-height="600" href="https://twitter.com/pipipi_morilyn?ref_src=twsrc%5Etfw">Tweets by pipipi_morilyn</a>
+  <script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a class="twitter-timeline" data-width="400" data-height="600" href="https://twitter.com/yabaT_official?ref_src=twsrc%5Etfw">Tweets by yabaT_official</a>
+  <script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</span>

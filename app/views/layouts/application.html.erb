@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LiveInformation</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>My Live Information</h1>
+      <a class="home" href="/">HOME<a>
+      <dt class="yoko">
+        <li><%= link_to("10-FEET","/10-FEET") %></li>
+        <li><%= link_to("ヤバイTシャツ屋さん","/yabaT") %></li>
+        <li><%= link_to("Dizzysunfist","/Dizzysunfist") %></li>
+      </dt>
+    </header>
+    <%= yield %>
+  </body>
+</html>

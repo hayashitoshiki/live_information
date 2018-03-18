@@ -1,0 +1,5 @@
+<p class="dai"><%= @music.title %> </p>
+
+<%= simple_format(@music.kasi) %>
+<%= link_to("編集", "/#{@music.artist}/#{@music.id}/edit") %>
+<%= link_to("削除", "/Dizzysunfist/#{@music.id}/destroy", {method: "post"}) %>
