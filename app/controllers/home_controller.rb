@@ -4,6 +4,23 @@ class HomeController < ApplicationController
     d1 = Date.today
     d2 = Date.new(2018 , 7 , 7)
     @sa = (d2 - d1).numerator
+    @artists_1 =Artist.where(switch: 1)
+    @artists_0 = Artist.where(switch: 0)
+     @user = Artist.new
+  end
+
+  def top_create
+    @artist = Artist.new(artist:params[:artist], switch:params[:switch])
+    @artist.save
+    redirect_to("/")
+  end
+
+  def top_destroy
+    @artist = Artist.find_by(artist:params[:artist], switch:params[:switch])
+    if @artist
+    @artist.destroy
+    end
+      redirect_to("/")
   end
 
   @@artist

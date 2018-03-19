@@ -1,20 +1,54 @@
- <h2> 京都大作戦まで後<%= @sa %>日</h2>
-<p>～Like～</p>
-<ul>
-  <li>NUBO</li>
-  <li>10-FEET</li>
-  <li>SUPER BEVAER</li>
-  <li>G-FREAK FACTORY</li>
-</ul>
+<div class="right">
+  <div class="border">
+    <%= form_tag("/home/top_create")do %>
+    <p>追加</p>
+    <span>
+      <label for="switch_plans_1">
+        <input type="radio" value=1 name="switch" id="switch_plans_1">
+        <label for="switch_plans_1">好き</label>
+      </label>
+    </span>
+    <span>
+      <label for="switch_plans_0">
+        <input type="radio" value=0 name="switch" id="switch_plans_0">
+        <label  for="switch_plans_0">勉強中</label>
+      </label>
+    </span>
+  <p>アーティスト名</p>
+  <input type="text" name="artist" size="30">
+  <input type="submit" value="追加">
+  <% end %>
+ </div>
+ <div class="border">
+ <p>削除</p>
+ <%= form_tag("/home/top_destroy")do %>
+ <span>
+   <label for="switch_plans_1">
+     <input type="radio" value=1 name="switch" id="switch_plans_1">
+     <label for="switch_plans_1">好き</label>
+   </label>
+ </span>
+ <span>
+   <label for="switch_plans_0">
+     <input type="radio" value=0 name="switch" id="switch_plans_0">
+     <label for="switch_plans_0">勉強中</label>
+   </label>
+ </span>
+<p>アーティスト名</p>
+<input type="text" name="artist" size="30">
+<input type="submit" value="削除">
+<% end %>
+</div>
+</div>
+<h2>
+京都大作戦まで後<%= @sa %>日！！</h2>
+<p>～好き～</p>
+<% @artists_1.each do |post| %>
+  <li><%= post.artist %></li>
+<% end %>
 <div>
-  <p>～勉強中～</p>
-  <dd>the skippers</dd>
-  <dd>BUZZ THE BEARS</dd>
-  <dd>Dizzy sunfist</dd>
-  <dd>shank</dd>
-  <dd>きのこ帝国</dd>
-  <dd>MOROHA</dd>
-  <dd>MONOETES</dd>
-  <dd>dustbox</dd>
-  <dd>HEY-SMITH</dd>
+<p>～勉強中～</p>
+<% @artists_0.each do |post| %>
+  <li><%= post.artist %></li>
+<% end %>
 </div>

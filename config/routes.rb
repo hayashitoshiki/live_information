@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
- get '/'=> 'home#top'
 
+ post "home/top_create" => "home#top_create"
+ post "home/top_destroy" => "home#top_destroy"
+ get '/'=> 'home#top'
 
  post ":artist/create" => "home#create"
  post ":artist/:id/destroy" => "home#destroy"
@@ -10,8 +12,7 @@ Rails.application.routes.draw do
  get ":artist/:id" => "home#kasi"
  get "Dizzysunfist" => "home#dizzysunfist"
  get "yabaT" => "home#yabaT"
- get "10-FEET" =>"home#tenfeet"
+ get "10-FEET" => "home#tenfeet"
 
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
