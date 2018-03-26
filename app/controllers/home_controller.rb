@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @sa = (d2 - d1).numerator
     @artists_1 =Artist.where(switch: 1)
     @artists_0 = Artist.where(switch: 0)
-     @user = Artist.new
+    @user = Artist.new
   end
 
   def top_create

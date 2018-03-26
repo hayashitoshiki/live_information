@@ -4,7 +4,7 @@ Rails.application.routes.draw do
  post "home/top_destroy" => "home#top_destroy"
  get '/'=> 'home#top'
 
- post ":artist/create" => "home#create"
+ post "music/create" => "home#create"
  post ":artist/:id/destroy" => "home#destroy"
  get ":artist/add" => "home#new"
  post ":aristst/:id/update" => "home#update"

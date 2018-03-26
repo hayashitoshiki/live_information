@@ -1,3 +1,3 @@
 class Music < ApplicationRecord
-  validates :music, {presence: true,uniqueness: true}
+  validates :title, {presence: true,uniqueness: true}
 end
