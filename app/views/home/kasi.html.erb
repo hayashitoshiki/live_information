@@ -2,4 +2,4 @@
 
 <%= simple_format(@music.kasi) %>
 <%= link_to("編集", "/#{@music.artist}/#{@music.id}/edit") %>
-<%= link_to("削除", "/Dizzysunfist/#{@music.id}/destroy", {method: "post"}) %>
+<%= link_to("削除", "/Dizzysunfist/#{@music.id}/destroy", method: :post, data: {confirm: "#{@music.title}を本当に削除しますか？"}) %>

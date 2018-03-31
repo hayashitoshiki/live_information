@@ -46,6 +46,7 @@ class HomeController < ApplicationController
   def create
     @music = Music.new(title:params[:music], kasi:params[:kasi], artist:@@artist)
     @music.save
+  
     if @@artist == "Dizzy Sunfist"
       redirect_to("/Dizzysunfist")
     elsif @@artist == "10-FEET"
@@ -76,6 +77,7 @@ class HomeController < ApplicationController
     @music.kasi = params[:kasi]
     @music.title = params[:title]
     @music.save
+
     if @@artist == "Dizzy Sunfist"
       redirect_to("/Dizzysunfist")
     elsif @@artist == "10-FEET"
