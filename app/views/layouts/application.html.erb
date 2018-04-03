@@ -3,12 +3,10 @@
   <head>
     <title>LiveInformation</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
     <header>
       <h1 class = "title"><font face="ＭＳ 明朝,平成明朝">My Live Information</font></h1>
       <a class="home" href="/">HOME<a>
@@ -18,6 +16,7 @@
             <li><font face="ＭＳ 明朝,平成明朝"><%= link_to("DizzySunfist","/Dizzysunfist", :style =>" text-decoration:none; color: #ffffff") %></font></li>
           </dt>
         </header>
+          <body>
         <%= yield %>
       </body>
     </html>

@@ -15,6 +15,10 @@
  */
 body{
   margin: 0;
+  background-image: image-url("daisakusen.jpg");
+  background-size: cover;
+
+
 }
 header {
   background-color: #a8a8a8;
@@ -49,34 +53,55 @@ dt li {
 .home{
   float: right;
   margin-right:  10px;
+  text-decoration: none;
 }
 
 li{
-
    list-style: none;
 }
-//--------------------Home-------------------//
+
+ .kasi_body{
+   background-color: #ffffff;
+   background-image: url();
+      margin: 0;
+ }
+//--------------------top-------------------//
 .right{
   float: right;
   margin-right: 30px;
 }
+
+.top_title{
+  font-size: 80px;
+  color: #000000;
+}
 //-------------楽曲一覧---------------------//
 table {
 	border-collapse: collapse;
+  background-color: #ffffff;
 }
 td {
 	border: solid 1px;
 	padding: 0.5em;
 }
+h2{
+  font-size: 40px;
+  margin: 0;
+}
+
+p{
+    margin: 0;
+}
 //-----------------Artist page-------------//
 .dai{
-  font-size: 30px;
+  font-size: 50px;
+     margin: 0;
 }
 
 .border{
 width: 300px;
 border:#d0d0d0  ridge 5px;
-
+background-color: #ffffff;
 }
 
 .left{
@@ -86,4 +111,7 @@ border:#d0d0d0  ridge 5px;
 
 .twitter{
   width: 1550px;
+}
+.back{
+  background-color: #ffffff;
 }

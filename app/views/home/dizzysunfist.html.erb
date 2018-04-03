@@ -1,9 +1,9 @@
 <h1>Dizzy sunfist</h1>
 <div class="left">
-
 <%= image_tag ('dizzysunfist.png'), :size =>'310x310' %>
-
   <div class="border">
+    <a href="http://dizzy-sunfist.com">Official Site</a>
+
     <p>曲一覧</p>
     <% @musics.each do |music| %>
       <li><%= link_to(music.title,"/Dizzysunfist/#{music.id}") %></li>
@@ -11,7 +11,6 @@
     <br>
     <a href="Dizzysunfist/add">追加</a>
   </div>
-  <a href="http://dizzy-sunfist.com">Official Site</a>
 </div>
 
 <div class="twitter">

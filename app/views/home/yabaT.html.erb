@@ -2,6 +2,7 @@
 <div class="left">
     <%= image_tag ('yabaT_image.jpg'), :size =>'310x310' %>
   <div class="border">
+    <a href="http://yabaitshirtsyasan.com/">Official Site</a>
     <p>曲一覧</p>
     <% @musics.each do |post| %>
       <li><%= link_to(post.title,"/yabaT/#{post.id}") %></li>
@@ -9,7 +10,6 @@
     <br>
     <a href="yabaT/add">追加</a>
   </div>
-  <a href="http://yabaitshirtsyasan.com/">Official Site</a>
 </div>
 <span class="twiite">
   <a class="twitter-timeline" data-width="400" data-height="600" href="https://twitter.com/yabaT_koyacial?ref_src=twsrc%5Etfw">Tweets by yabaT_koyacial</a>

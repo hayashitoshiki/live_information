@@ -1,8 +1,8 @@
 <h2>編集</h2>
 <%= form_tag("/Dizzy/#{@music.id}/update")do %>
-　<p>曲名</p>
-<input type="text" name="title" value ="<%= @music.title %>" size="30">
-  <p>歌詞</p>
-  <textarea name = "kasi" rows="30" cols="100"><%= @music.kasi %></textarea>
-  <input type="submit" value="保存">
+<p>曲名</p>
+<input type="text" name="title" value="<%= @music.title %>" size="30">
+<p>歌詞</p>
+<textarea name="kasi" rows="30" cols="100"><%= @music.kasi %></textarea>
+<input type="submit" value="保存">
 <% end %>
