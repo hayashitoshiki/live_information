@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  @@artist
   def top
     require "date"
     d1 = Date.today
@@ -22,8 +23,29 @@ class HomeController < ApplicationController
     end
       redirect_to("/")
   end
+#---------------------------楽曲一覧-------------------------------------------
+  def music_list
+    @musics = Music.order("artist ASC")
+    @artist = Music.select("artist").group("artist")
+    @@artist = " "
+  end
+  def music_new
+    if params[:example] == "ALL"
+        @musics = Music.order("artist asc")
+      else
+        @musics = Music.where(artist: params[:example])
+      end
+      @artist = Music.select("artist").group("artist")
+      render("home/music_list")
+  end
 
-  @@artist
+  def top_music_create
+    @music = Music.new(title:params[:music], kasi:params[:kasi], artist:params[:artist])
+    @music.save
+      redirect_to("/home/Mucis_list")
+  end
+
+
   #-------------アーティストページ---------------------
   def dizzysunfist
     @musics = Music.where(artist: "Dizzy Sunfist")
@@ -46,7 +68,7 @@ class HomeController < ApplicationController
   def create
     @music = Music.new(title:params[:music], kasi:params[:kasi], artist:@@artist)
     @music.save
-  
+
     if @@artist == "Dizzy Sunfist"
       redirect_to("/Dizzysunfist")
     elsif @@artist == "10-FEET"
@@ -67,8 +89,10 @@ class HomeController < ApplicationController
       redirect_to("/Dizzysunfist")
     elsif @@artist == "10-FEET"
       redirect_to("/10-FEET")
-    else
+    elsif @@artist =="yabaT"
       redirect_to("/yabaT")
+    else
+      redirect_to("/home/Mucis_list")
     end
   end
 
@@ -82,8 +106,10 @@ class HomeController < ApplicationController
       redirect_to("/Dizzysunfist")
     elsif @@artist == "10-FEET"
       redirect_to("/10-FEET")
-    else
+    elsif @@artist =="yabaT"
       redirect_to("/yabaT")
+    else
+      redirect_to("/home/Mucis_list")
     end
   end
 

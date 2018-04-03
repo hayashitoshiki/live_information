@@ -10,14 +10,14 @@
 
   <body>
     <header>
-      <h1>My Live Information</h1>
+      <h1 class = "title"><font face="ＭＳ 明朝,平成明朝">My Live Information</font></h1>
       <a class="home" href="/">HOME<a>
-      <dt class="yoko">
-        <li><%= link_to("10-FEET","/10-FEET") %></li>
-        <li><%= link_to("ヤバイTシャツ屋さん","/yabaT") %></li>
-        <li><%= link_to("DizzySunfist","/Dizzysunfist") %></li>
-      </dt>
-    </header>
-    <%= yield %>
-  </body>
-</html>
+          <dt class="yoko">
+            <li class ="bunki"><font face="ＭＳ 明朝,平成明朝"><%= link_to("10-FEET","/10-FEET", :style =>" text-decoration:none; color: #ffffff") %></font></li>
+            <li class = "bunki"><font face="ＭＳ 明朝,平成明朝"><%= link_to("ヤバイTシャツ屋さん","/yabaT", :style =>" text-decoration:none; color: #ffffff") %></font></li>
+            <li><font face="ＭＳ 明朝,平成明朝"><%= link_to("DizzySunfist","/Dizzysunfist", :style =>" text-decoration:none; color: #ffffff") %></font></li>
+          </dt>
+        </header>
+        <%= yield %>
+      </body>
+    </html>

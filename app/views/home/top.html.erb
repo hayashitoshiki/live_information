@@ -4,50 +4,51 @@
     <p>追加</p>
     <span>
       <label for="switch_plans_1">
-        <input type="radio" value=1 name="switch" id="switch_plans_1">
+        <input type="radio" value="1" name="switch" id="switch_plans_1">
         <label for="switch_plans_1">好き</label>
       </label>
     </span>
     <span>
       <label for="switch_plans_0">
-        <input type="radio" value=0 name="switch" id="switch_plans_0">
-        <label  for="switch_plans_0">勉強中</label>
+        <input type="radio" value="0" name="switch" id="switch_plans_0">
+        <label for="switch_plans_0">勉強中</label>
       </label>
     </span>
+    <p>アーティスト名</p>
+    <input type="text" name="artist" size="30">
+    <input type="submit" value="追加">
+  <% end %>
+</div>
+<div class="border">
+  <p>削除</p>
+  <%= form_tag("/home/top_destroy")do %>
+  <span>
+    <label for="switch_plans_1">
+      <input type="radio" value="1" name="switch" id="switch_plans_1">
+      <label for="switch_plans_1">好き</label>
+    </label>
+  </span>
+  <span>
+    <label for="switch_plans_0">
+      <input type="radio" value="0" name="switch" id="switch_plans_0">
+      <label for="switch_plans_0">勉強中</label>
+    </label>
+  </span>
   <p>アーティスト名</p>
   <input type="text" name="artist" size="30">
-  <input type="submit" value="追加">
-  <% end %>
- </div>
- <div class="border">
- <p>削除</p>
- <%= form_tag("/home/top_destroy")do %>
- <span>
-   <label for="switch_plans_1">
-     <input type="radio" value=1 name="switch" id="switch_plans_1">
-     <label for="switch_plans_1">好き</label>
-   </label>
- </span>
- <span>
-   <label for="switch_plans_0">
-     <input type="radio" value=0 name="switch" id="switch_plans_0">
-     <label for="switch_plans_0">勉強中</label>
-   </label>
- </span>
-<p>アーティスト名</p>
-<input type="text" name="artist" size="30">
-<input type="submit" value="削除">
+  <input type="submit" value="削除">
 <% end %>
 </div>
+<%=link_to("曲一覧","/home/Mucis_list") %>
 </div>
 <h2>京都大作戦まで後<%= @sa %>日！！</h2>
 <p>～好き～</p>
 <% @artists_1.each do |post| %>
-  <li><%= post.artist %></li>
+<li><%= post.artist %></li>
 <% end %>
 <div>
 <p>～勉強中～</p>
 <% @artists_0.each do |post| %>
-  <li><%= post.artist %></li>
+<li><%= post.artist %></li>
 <% end %>
 </div>

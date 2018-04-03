@@ -1,0 +1,26 @@
+<h1>楽曲一覧</h1>
+
+<a>アーティスト</a>
+<%= form_tag("/home/music_new")do %>
+<select name="example">
+  <% @artist.each do |artist| %>
+    <option value="<%= artist.artist %>"><%= artist.artist %></option>
+  <% end %>
+    <option value="ALL">ALL</option>
+</select>
+<input type="submit" value="検索">
+<% end %>
+
+<table>
+<tr>
+  <td>タイトル</td>
+  <td>歌手</td>
+</tr>
+<% @musics.each do |music| %>
+  <tr>
+    <td><%= link_to(music.title,"/Dizzysunfist/#{music.id}") %></td>
+    <td><%= music.artist %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to("楽曲追加", "/home/new") %>
