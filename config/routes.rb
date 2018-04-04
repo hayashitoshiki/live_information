@@ -14,9 +14,9 @@ Rails.application.routes.draw do
  post ":aristst/:id/update" => "home#update"
  get ":artist/:id/edit" => "home#edit"
  get ":artist/:id" => "home#kasi"
- get "Dizzysunfist" => "home#dizzysunfist"
- get "yabaT" => "home#yabaT"
- get "10-FEET" => "home#tenfeet"
+ get "Dizzysunfist" => "dizzy#dizzysunfist"
+ get "yabaT" => "yaba_t#yabaT"
+ get "10-FEET" => "ten_feet#tenfeet"
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

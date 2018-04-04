@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  @@artist
+  $artist
   def top
     require "date"
     d1 = Date.today
@@ -27,7 +27,7 @@ class HomeController < ApplicationController
   def music_list
     @musics = Music.order("artist ASC")
     @artist = Music.select("artist").group("artist")
-    @@artist = " "
+    $artist = " "
   end
   def music_new
     if params[:example] == "ALL"
@@ -45,33 +45,17 @@ class HomeController < ApplicationController
       redirect_to("/home/Mucis_list")
   end
 
-
-  #-------------アーティストページ---------------------
-  def dizzysunfist
-    @musics = Music.where(artist: "Dizzy Sunfist")
-    @@artist = "Dizzy Sunfist"
-  end
-
-  def tenfeet
-    @musics =Music.where(artist: "10-FEET")
-    @@artist = "10-FEET"
-  end
-
-  def yabaT
-    @musics = Music.where(artist: "yabaT")
-    @@artist = "yabaT"
-  end
-#-----------------編集----------------------------------
+#-----------------編集----------------------------------------------------------
   def new
   end
 
   def create
-    @music = Music.new(title:params[:music], kasi:params[:kasi], artist:@@artist)
+    @music = Music.new(title:params[:music], kasi:params[:kasi], artist:$artist)
     @music.save
 
-    if @@artist == "Dizzy Sunfist"
+    if $artist == "Dizzy Sunfist"
       redirect_to("/Dizzysunfist")
-    elsif @@artist == "10-FEET"
+    elsif $artist == "10-FEET"
       redirect_to("/10-FEET")
     else
       redirect_to("/yabaT")
@@ -85,11 +69,11 @@ class HomeController < ApplicationController
   def destroy
     @music = Music.find_by(id:params[:id])
     @music.destroy
-    if @@artist == "Dizzy Sunfist"
+    if $artist == "Dizzy Sunfist"
       redirect_to("/Dizzysunfist")
-    elsif @@artist == "10-FEET"
+    elsif $artist == "10-FEET"
       redirect_to("/10-FEET")
-    elsif @@artist =="yabaT"
+    elsif $artist =="yabaT"
       redirect_to("/yabaT")
     else
       redirect_to("/home/Mucis_list")
@@ -101,12 +85,11 @@ class HomeController < ApplicationController
     @music.kasi = params[:kasi]
     @music.title = params[:title]
     @music.save
-
-    if @@artist == "Dizzy Sunfist"
+    if $artist == "Dizzy Sunfist"
       redirect_to("/Dizzysunfist")
-    elsif @@artist == "10-FEET"
+    elsif $artist == "10-FEET"
       redirect_to("/10-FEET")
-    elsif @@artist =="yabaT"
+    elsif $artist =="yabaT"
       redirect_to("/yabaT")
     else
       redirect_to("/home/Mucis_list")

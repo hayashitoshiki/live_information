@@ -7,16 +7,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-    <header>
-      <h1 class = "title"><font face="ＭＳ 明朝,平成明朝">My Live Information</font></h1>
-      <a class="home" href="/">HOME<a>
-          <dt class="yoko">
-            <li class ="bunki"><font face="ＭＳ 明朝,平成明朝"><%= link_to("10-FEET","/10-FEET", :style =>" text-decoration:none; color: #ffffff") %></font></li>
-            <li class = "bunki"><font face="ＭＳ 明朝,平成明朝"><%= link_to("ヤバイTシャツ屋さん","/yabaT", :style =>" text-decoration:none; color: #ffffff") %></font></li>
-            <li><font face="ＭＳ 明朝,平成明朝"><%= link_to("DizzySunfist","/Dizzysunfist", :style =>" text-decoration:none; color: #ffffff") %></font></li>
-          </dt>
-        </header>
-          <body>
+  <header>
+    <h1 class="title">
+      <font face="ＭＳ 明朝,平成明朝">My Live Information</font>
+    </h1>
+    <a class="home" href="/">HOME<a>
+        <dt class="yoko">
+          <li class="bunki">
+            <div class="<%= active_class_for('ten_feet') %>">
+              <font face="ＭＳ 明朝,平成明朝"><%= link_to("10-FEET","/10-FEET", :style =>" text-decoration:none; color: #ffffff") %></font>
+            </div>
+          </li>
+          <li class="bunki">
+            <div class="<%= active_class_for('yaba_t') %>">
+              <font face="ＭＳ 明朝,平成明朝"><%= link_to("ヤバイTシャツ屋さん","/yabaT", :style =>" text-decoration:none; color: #ffffff") %></font>
+            </div>
+          </li>
+          <li>
+            <div class="<%= active_class_for('dizzy') %>">
+              <font face="ＭＳ 明朝,平成明朝"><%= link_to("DizzySunfist","/Dizzysunfist", :style =>" text-decoration:none; color: #ffffff") %></font>
+            </div>
+          </li>
+        </dt>
+      </header>
+      <body>
         <%= yield %>
       </body>
     </html>
