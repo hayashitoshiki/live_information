@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+ get "home/live_date" => 'home#live_date'
  get "home/new" => "home#all_music_new"
  get "home/Mucis_list" => "home#music_list"
  post "home/top_music_create" => "home#top_music_create"

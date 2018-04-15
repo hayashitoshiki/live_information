@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   $artist
+
+  def live_date
+  end
+
   def top
     require "date"
     d1 = Date.today
