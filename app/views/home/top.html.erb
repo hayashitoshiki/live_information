@@ -46,14 +46,16 @@
 <div class="left">
 <p>～好き～</p>
 <% @artists_1.each do |post| %>
-<li><%= post.artist %></li>
+  <li><%= post.artist %></li>
 <% end %>
 <div>
-<p>～勉強中～</p>
-<% @artists_0.each do |post| %>
-<li><%= post.artist %></li>
-<% end %>
+  <p>～勉強中～</p>
+  <% @artists_0.each do |post| %>
+    <li><%= post.artist %></li>
+  <% end %>
 </div>
 </div>
 
-<h1 class="top_title"><center>京都大作戦まであと<%= @sa %>日！！</center></h1>
+<h1 class="top_title">
+<center>京都大作戦まであと<%= @sa %>日！！</center>
+</h1>

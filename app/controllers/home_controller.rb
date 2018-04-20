@@ -1,8 +1,6 @@
 class HomeController < ApplicationController
   $artist
 
-  def live_date
-  end
 
   def top
     require "date"
@@ -27,6 +25,63 @@ class HomeController < ApplicationController
     end
       redirect_to("/")
   end
+#--------------------カレンダー編集----------------------------------
+  def live_date
+  end
+  
+  def show
+    @event = Plan.all
+   respond_to do |format|
+     format.json {
+       render json:
+       @event.to_json(
+         only: [ :id, :title, :start, :end, :allDay]
+       )
+     }
+   end
+  end
+
+  def create_event
+    plans = Plan.new
+     plans.attributes = {
+       title: params[:title],
+       start: params[:start],
+       end: params[:end],
+     }
+     plans.save
+     respond_to do |format|
+       format.json {
+         render json:
+         @event.to_json(
+           only: [:id, :title, :start, :end,]
+         )
+       }
+     end
+  end
+
+  def update_event
+    @event = Plan.find_by(id: params[:id])
+    @event.attributes = {
+      title: params[:title],
+      start: params[:start],
+      end: params[:end],
+    }
+    @event.save
+    respond_to do |format|
+      format.json {
+        render json:
+        @event.to_json(
+          only: [:id, :title, :start, :end]
+        )
+      }
+    end
+  end
+
+  def remove_event
+    @event = Plan.find_by(id: params[:id])
+    @event.destroy
+  end
+
 #---------------------------楽曲一覧-------------------------------------------
   def music_list
     @musics = Music.order("artist ASC")
