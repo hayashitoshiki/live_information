@@ -1,61 +1,76 @@
-<div class="right">
-  <div class="border">
-    <%= form_tag("/home/top_create")do %>
-    <p>追加</p>
-    <span>
-      <label for="switch_plans_1">
-        <input type="radio" value="1" name="switch" id="switch_plans_1">
-        <label for="switch_plans_1">好き</label>
-      </label>
-    </span>
-    <span>
-      <label for="switch_plans_0">
-        <input type="radio" value="0" name="switch" id="switch_plans_0">
-        <label for="switch_plans_0">勉強中</label>
-      </label>
-    </span>
-    <p>アーティスト名</p>
-    <input type="text" name="artist" size="30">
-    <input type="submit" value="追加">
-  <% end %>
-</div>
-<div class="border">
-  <p>削除</p>
-  <%= form_tag("/home/top_destroy")do %>
-  <span>
-    <label for="switch_plans_1">
-      <input type="radio" value="1" name="switch" id="switch_plans_1">
-      <label for="switch_plans_1">好き</label>
-    </label>
-  </span>
-  <span>
-    <label for="switch_plans_0">
-      <input type="radio" value="0" name="switch" id="switch_plans_0">
-      <label for="switch_plans_0">勉強中</label>
-    </label>
-  </span>
-  <p>アーティスト名</p>
-  <input type="text" name="artist" size="30">
-  <input type="submit" value="削除">
-<% end %>
-</div>
-<%=link_to("曲一覧","/home/Mucis_list", :style =>" text-decoration:none;") %>
-<%=link_to("ライブ日程","/home/live_date", :style =>" text-decoration:none;") %>
-
-</div>
-<div class="left">
-<p>～好き～</p>
-<% @artists_1.each do |post| %>
-  <li><%= post.artist %></li>
-<% end %>
-<div>
-  <p>～勉強中～</p>
-  <% @artists_0.each do |post| %>
-    <li><%= post.artist %></li>
-  <% end %>
-</div>
-</div>
-
 <h1 class="top_title">
-<center>京都大作戦まであと<%= @sa %>日！！</center>
+  <center>京都大作戦まであと<%= @sa %>日！！</center>
 </h1>
+
+<div class = "top_footer">
+  <div class="top_partition">
+    <div class="top_list-border">
+      <a>～好き～</a>
+      <% @artists_1.each do |post| %>
+      <li><%= post.artist %></li>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="top_partition">
+    <div class="top_list-border">
+      <a>～勉強中～</a>
+      <% @artists_0.each do |post| %>
+        <li><%= post.artist %></li>
+      <% end %>
+    </div>
+  </div>
+
+  <div class= "top_partition2">
+    <div class="top_border2">
+      <li><%=link_to("曲一覧","/home/Mucis_list", :style =>" text-decoration:none;") %></li>
+      <li><%=link_to("ライブ日程","/home/live_date", :style =>" text-decoration:none;") %></li>
+    </div>
+  </div>
+
+  <div class="top_partition">
+    <div class="top_border">
+        <%= form_tag("/home/top_create")do %>
+        <li>追加</li>
+        <span>
+          <label for="switch_plans_1">
+            <input type="radio" value="1" name="switch" id="switch_plans_1">
+            <label for="switch_plans_1">好き</label>
+          </label>
+        </span>
+        <span>
+          <label for="switch_plans_0">
+            <input type="radio" value="0" name="switch" id="switch_plans_0">
+            <label for="switch_plans_0">勉強中</label>
+          </label>
+        </span>
+        <li>アーティスト名</li>
+        <input type="text" name="artist" size="30">
+        <input type="submit" value="追加">
+      <% end %>
+    </div>
+  </div>
+
+  <div class="top_partition">
+    <div class="top_border">
+      <li>削除</li>
+      <%= form_tag("/home/top_destroy")do %>
+      <span>
+        <label for="switch_plans_1">
+          <input type="radio" value="1" name="switch" id="switch_plans_1">
+          <label for="switch_plans_1">好き</label>
+        </label>
+      </span>
+      <span>
+        <label for="switch_plans_0">
+          <input type="radio" value="0" name="switch" id="switch_plans_0">
+          <label for="switch_plans_0">勉強中</label>
+        </label>
+      </span>
+      <li>アーティスト名</li>
+      <input type="text" name="artist" size="30">
+      <input type="submit" value="削除">
+      <% end %>
+    </div>
+  </div>
+</div>

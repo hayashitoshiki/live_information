@@ -14,27 +14,32 @@
  *= require_tree .
  *= require_self
  */
-
-
-
-body{
-  margin: 0;
+body {
+  margin-top: 160px;
   background-image: image-url("daisakusen.jpg");
   background-size: cover;
   background-attachment: fixed;
+  margin: 130px 0 0 0;
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #a8a8a8;
   margin: 0;
 }
 
-
-h1{
+h1 {
   margin: 0;
 }
 
-.title{
+li {
+  list-style: none;
+}
+
+.title {
   color: #ffffff;
   font-size: 50px;
 }
@@ -42,89 +47,123 @@ h1{
 .yoko {
   width: 100%;
   display: flex;
-  background-color:#000000;
+  background-color: #000000;
+}
+
+.partition {
+  border-right: 1px solid #DDD;
 }
 
 dt li {
   width: 33.333%;
   float: left;
-  list-style: none;
   font-size: 25px;
   text-align: center;
 }
 
-.bunki{
-    border-right: 1px solid #DDD;
-}
-
-.home{
+.home {
   float: right;
-  margin-right:  10px;
+  margin-right: 10px;
   text-decoration: none;
 }
 
-li{
-   list-style: none;
+.active {
+  background-color: #c2c2c2;
 }
-
- .kasi_body{
-   background-color: #ffffff;
-   background-image: url();
-      margin: 0;
- }
- .active{
-   background-color: #c2c2c2;
- }
- .marge{
-   margin: 20px;
- }
 //--------------------top-------------------//
-
-.right{
-  float: right;
-  margin-right: 30px;
-}
-
-.top_title{
+.top_title {
   font-size: 80px;
   color: #000000;
+  margin-top: 355px;
+}
+
+.top_partition {
+  width: 320px;
+  float: left;
+  list-style: none;
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+
+.top_partition2 {
+  width: 298px;
+  float: left;
+  list-style: none;
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+
+.top_list-border {
+  border: #a8a8a8 ridge 5px;
+  width: 315px;
+  background-color: rgba(#ffffff, 0.7);
+  overflow-y: scroll;
+  height: 180px;
+}
+
+.top_border {
+  border: #a8a8a8 ridge 5px;
+  width: 315px;
+  background-color: rgba(#ffffff, 0.7);
+  height: 180px;
+}
+
+.top_border2 {
+  border: #a8a8a8 ridge 5px;
+  width: 293px;
+  background-color: rgba(#ffffff, 0.7);
+  height: 180px;
+}
+
+.top_footer {
+  margin: 320px 0 0 0;
+  width: 1578px;
+}
+//-----------------歌詞----------------------//
+.kasi_body {
+  background-color: rgba(#ffffff, 0.7);
+  margin: 130px 0 0 0;
 }
 //-------------楽曲一覧---------------------//
+
 table {
-	border-collapse: collapse;
+  border-collapse: collapse;
   background-color: #ffffff;
 }
 
 td {
-	border: solid 1px;
-	padding: 0.5em;
+  border: solid 1px;
+  padding: 0.5em;
 }
 
-h2{
+h2 {
   font-size: 40px;
   margin: 0;
 }
-
 //-----------------Artist page-------------//
-.dai{
+
+.dai {
   font-size: 50px;
-     margin: 0;
+  margin: 0;
 }
 
-.border{
-width: 300px;
-border:#d0d0d0  ridge 5px;
-background-color: #ffffff;
+.border {
+  width: 300px;
+  border: #d0d0d0 ridge 5px;
+  background-color: rgba(#ffffff, 0.6);
 }
 
-.left{
+.left {
   float: left;
   margin: 10px;
 }
 
-.twitter{
+.twitter {
   width: 1550px;
 }
-.back{
+
+.back {
   background-color: #ffffff;
 }
